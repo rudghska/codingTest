@@ -8,6 +8,8 @@ function mySolution(str) {
       answer += c.toUpperCase();
     }
   }
+
+  return study;
 }
 
 console.log(mySolution('sTuDy'));
