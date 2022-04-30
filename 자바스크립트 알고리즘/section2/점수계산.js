@@ -1,6 +1,4 @@
 function solution(arr) {
-  let point = 0;
-
   //   const result =
   //     arr.reduce((sum, b, i) => {
   //       if (b === 0) point = 0;
@@ -13,17 +11,29 @@ function solution(arr) {
   //       return sum + b;
   //     }, 0) + sumPoint;
 
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+  //   let point = 0;
+  //   let sum = 0;
 
-    if (arr[i + 1] === 1) {
-      sum += point++;
+  //   for (let i = 0; i < arr.length; i++) {
+  //     sum += arr[i];
+
+  //     if (arr[i + 1] === 1) {
+  //       sum += point++;
+  //     } else {
+  //       point = 0;
+  //     }
+  //   }
+  let point = 0;
+  let sum = 0;
+
+  for (const num of arr) {
+    if (num === 1) {
+      point += 1;
+      sum += point;
     } else {
       point = 0;
     }
   }
-
   return sum;
 }
 
