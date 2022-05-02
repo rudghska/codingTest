@@ -17,4 +17,22 @@ function mySolution1(score) {
   return answer;
 }
 
+function mySolution2(arr) {
+  const answer = [];
+  let count = 1;
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] < arr[j]) {
+        count++;
+      }
+    }
+    answer[i] = count;
+    count = 1;
+  }
+
+  return answer;
+}
+
 mySolution1([87, 89, 92, 100, 100, 100, 76]);
+mySolution2([87, 89, 92, 100, 100, 100, 76]);
