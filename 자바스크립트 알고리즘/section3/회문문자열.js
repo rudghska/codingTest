@@ -16,3 +16,4 @@ function mySolution2(str) {
 
 mySolution1('gooG');
 mySolution2('gooG');
+mySolution2('zzaa');
