@@ -26,4 +26,27 @@ function mySolution(str, c) {
   return result;
 }
 
-solution('teachermode', 'e');
+function solution(str, t) {
+  let p = 100;
+  let answer = [];
+  for (const c of str) {
+    if (c === t) {
+      p = 0;
+      answer.push(p);
+    } else {
+      answer.push(++p);
+    }
+  }
+
+  p = 100;
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    if (str[i] === t) {
+      p = 0;
+    } else {
+      answer[i] = Math.min(answer[i], ++p);
+    }
+  }
+
+  return answer;
+}
