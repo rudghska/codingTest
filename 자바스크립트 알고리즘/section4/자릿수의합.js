@@ -14,11 +14,6 @@ function mySolution(nums) {
 
     curMaxNum = nums[i];
 
-    if (max === 0) {
-      max = curMax;
-      maxNum = nums[i];
-    }
-
     if (curMax > max) {
       max = curMax;
       maxNum = curMaxNum;
@@ -40,4 +35,30 @@ function mySolution(nums) {
   return result;
 }
 
+function solution(arr) {
+  let result,
+    max = Number.MIN_SAFE_INTEGER;
+
+  for (const n of arr) {
+    let sum = 0,
+      temp = n;
+
+    while (temp) {
+      sum += temp % 10;
+      temp = Math.floor(temp / 10);
+    }
+
+    if (sum > max) {
+      max = sum;
+      result = n;
+    } else if (sum === max) {
+      if (n > result) {
+        result = n;
+      }
+    }
+  }
+  return result;
+}
+
 mySolution([128, 460, 603, 9999, 40, 2356, 521, 123451, 137, 11111155, 123]);
+solution([128, 460, 603, 9999, 40, 2356, 521, 123451, 137, 11111155, 123]);
