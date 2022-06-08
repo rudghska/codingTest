@@ -1,17 +1,13 @@
-function primeNumber(num) {
+function isPrime(num) {
   if (num === 1) return false;
 
-  const result = [];
-
-  for (let i = 2; i < num + 1; i++) {
+  for (let i = 2; i <= parseInt(Math.sqrt(num)); i++) {
     if (num % i === 0) {
-      result.push(i);
+      return false;
     }
   }
 
-  if (result.length === 1) {
-    return true;
-  }
+  return true;
 }
 
 function mySolution(arr) {
@@ -27,7 +23,7 @@ function mySolution(arr) {
 
     pNum = (q + '').split('').reverse().join('') * 1;
 
-    if (primeNumber(pNum)) {
+    if (isPrime(pNum)) {
       answer.push(pNum);
     }
   }
@@ -35,5 +31,22 @@ function mySolution(arr) {
   return answer;
 }
 
+function solution(arr) {
+  let answer = [];
+  let t;
+  for (let x of arr) {
+    let res = 0;
+
+    while (x) {
+      t %= 10;
+      res = res * 10 + t;
+      x = parseInt(x / 10);
+    }
+
+    if (isPrime(res)) answer.push(res);
+  }
+  return answer;
+}
+
 mySolution([32, 55, 62, 20, 250, 370, 200, 30, 100]);
-mySolution([21, , 33, 32, 55, 62, 20, 250, 370, 200, 30, 100]);
+solution([21, 33, 32, 55, 62, 20, 250, 370, 200, 30, 100]);
