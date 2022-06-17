@@ -1,4 +1,4 @@
-function mySolution(m, arr) {
+function solution(m, arr) {
   let n = 1;
   let sum = 0;
   let max = [];
@@ -24,7 +24,7 @@ function mySolution(m, arr) {
   return answer;
 }
 
-mySolution(28, [
+solution(28, [
   [6, 6],
   [2, 2],
   [4, 3],
